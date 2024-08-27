@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização de Dados</title>
+</head>
+<body>
+    <h1>Dados em JSON</h1>
+    <pre>{{ data }}</pre>
+    <form action="/plot_graphs" method="post">
+        <!-- Passar o JSON e o tipo de gráfico como inputs escondidos -->
+        <input type="hidden" name="json_data" value="{{ data }}">
+        <input type="hidden" name="chart_type" value="{{ chart_type }}">
+        <button type="submit">Plotar Gráficos</button>
+    </form>
+</body>
+</html>

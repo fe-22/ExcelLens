@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico Gerado</title>
+</head>
+<body>
+    <h1>Gráfico</h1>
+    <img src="data:image/png;base64,{{ image }}">
+    <form action="/save_plot" method="post">
+        <!-- Passar a imagem codificada em Base64 e o JSON escondidos -->
+        <input type="hidden" name="image" value="{{ image }}">
+        <input type="hidden" name="json_data" value="{{ json_data }}">
+        <input type="hidden" name="chart_type" value="{{ chart_type }}">
+        <button type="submit">Salvar Gráfico</button>
+    </form>
+    <form action="/plot_graphs" method="post">
+        <!-- Permitir nova plotagem -->
+        <input type="hidden" name="json_data" value="{{ json_data }}">
+        <input type="hidden" name="chart_type" value="{{ chart_type }}">
+        <button type="submit">Plotar Novamente</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Colunas</title>
+</head>
+<body>
+    <h1>Seleção de Colunas</h1>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form action="/generate_chart" method="post">
+        <label for="x_column">Coluna X:</label>
+        <select name="x_column" id="x_column">
+            {% for column in columns %}
+            <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+        <label for="y_column">Coluna Y:</label>
+        <select name="y_column" id="y_column">
+            {% for column in columns %}
+            <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+        <input type="hidden" name="chart_type" value="{{ chart_type }}">
+        <button type="submit">Gerar Gráfico</button>
+    </form>
+</body>
+</html>

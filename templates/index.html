@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de Arquivo</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Estilos para o container centralizado */
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para o título */
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Estilos para os labels e inputs */
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Estilos para o botão */
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para o footer */
+        footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Envio de Arquivo Excel ou CSV</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="file">Escolha um arquivo Excel ou CSV:</label>
+            <input type="file" id="file" name="file" accept=".xlsx,.xls,.csv" required>
+            <br><br>
+            <label for="chart_type">Escolha o tipo de gráfico:</label>
+            <select id="chart_type" name="chart_type">
+                <option value="line">Linha</option>
+                <option value="bar">Barra</option>
+                <option value="scatter">Dispersão</option>
+                <option value="hist">Histograma</option>
+            </select>
+            <br><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Desenvolvido por @Fthec - Contato: fernandoalextech@gmail.com/11-9.8217-0425 | © 2024 Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
